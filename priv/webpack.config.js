@@ -8,14 +8,16 @@ var config = {
     // specify that react should be part of that chunk.
     entry: {
       app: [ "./app/graph.jsx", "./app/main.jsx" ],
-      vendors: [ "jquery", "underscore", "react" ]
+      vendors: [ "jquery", "underscore", "react", "vis", "dygraphs" ]
     },
     plugins: [
       new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.js"),
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
-        _: "underscore"
+        _: "underscore",
+        vis: "vis",
+        Dygraph: "dygraphs"
       })
     ],
     output: {

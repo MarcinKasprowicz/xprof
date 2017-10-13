@@ -78,3 +78,10 @@ a.navbar-brand {
 input#searchBox {
   border-color: transparent;
 }
+
+#graph {
+  width: 100%;
+  height: 500px;
+  color: red;
+  border: 1px solid red;
+}

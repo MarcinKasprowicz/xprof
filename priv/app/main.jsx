@@ -10,6 +10,14 @@ import GraphPanel from "./graph_panel.jsx";
 import FunctionBrowser from "./function_browser.jsx";
 import Utils from "./utils.js";
 
+// import GraphVis from "./graph_vis.jsx";
+import GraphDyso from "./graph_dyso.jsx";
+
+// if (process.env.NODE_ENV !== "production") {
+//   const { whyDidYouUpdate } = require("why-did-you-update");
+//   whyDidYouUpdate(React);
+// }
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -47,13 +55,20 @@ class App extends React.Component {
               <img src="img/xprof_logo.png" height="45px"/>
             </a>
           </div>
-
           <div className="navbar-collapse collapse" id="navbar-collapsible">
             <TracingSwitch/>
             <FunctionBrowser ref="functionBrowser" addGraph={this.addGraph.bind(this)} language={guides.language} type={guides.type} example={guides.example} />
           </div>
         </nav>
-        <GraphPanel ref="graphPanel" clearFunctionBrowser={this.clearFunctionBrowser.bind(this)}/>
+        <div className="row">
+          <div className="col-md-12">
+            <GraphDyso/>
+          </div>
+        </div>
+        {
+
+          /* <GraphPanel ref="graphPanel" clearFunctionBrowser={this.clearFunctionBrowser.bind(this)}/> */
+        }
       </div>
     );
   }
